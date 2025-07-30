@@ -12,7 +12,6 @@ import { sendToken } from "../utils/jwt";
 import { redis } from "../utils/redis";
 import { getUserById } from "../services/user.service";
 import cloudinary from 'cloudinary';
-import { error } from "console";
 
 interface IRegistrationBody{
     name: string;
@@ -197,7 +196,7 @@ interface ISocialBody {
 
 export const socialAuth = CatchAsyncError(async(req: Request, res: Response, next: NextFunction) => {
     try {
-        const {email, name, avatar} = req.body;
+        const {email, name, avatar} = req.body as ISocialBody;
         const user = await userModel.findOne({ email });
 
         if(!user){

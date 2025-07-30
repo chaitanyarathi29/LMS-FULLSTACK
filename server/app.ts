@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { diffErrors } from './middleware/error';
 import userRouter from './routes/user.routes';
+import courseRouter from './routes/course.routes';
 
 export const app = express();
 dotenv.config();
@@ -22,6 +23,8 @@ app.use(cors({
 
 //userRoutes
 app.use('/api/v1', userRouter);
+//courseRoutes
+app.use('/api/v1', courseRouter);
 
 //testin api
 app.get('/test', (req:Request, res: Response) => {
