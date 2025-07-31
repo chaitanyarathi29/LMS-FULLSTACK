@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #333333;
+    }
+    .info {
+      margin-top: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #777777;
+      text-align: center;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #2b6cb0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Hello,</h2>
+
+    <p>Thank you for purchasing the course on <strong>Skillnova</strong>! 🎉</p>
+
+    <div class="info">
+      <p><strong>Order ID:</strong> <%= order._id %></p>
+      <p><strong>Course Name:</strong> <%= order.name %></p>
+      <p><strong>Amount Paid:</strong> ₹<%= order.price %></p>
+      <p><strong>Purchase Date:</strong> <%= order.date %></p>
+    </div>
+
+    <p class="highlight">You can now access your course from your dashboard.</p>
+
+    <p>Happy learning!<br/>– The Skillnova Team</p>
+
+    <div class="footer">
+      This is an automated email. Please do not reply.
+    </div>
+  </div>
+</body>
+</html>
